@@ -50,7 +50,7 @@ export const feedback = [
     id: "feedback-1",
     content:
       "The next-generation platform which serves all your health needs.                   #bestInClass",
-    name: "Yash Makhija",
+    name: "Veshel Sengh",
     title: "HIV & Aids | Patient",
     img: people01,
   },
@@ -58,7 +58,7 @@ export const feedback = [
     id: "feedback-2",
     content:
       "Healthcare Up makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Yash Sejwal",
+    name: "Dipensho Komer",
     title: "Blood Cancer | Patient",
     img: people02,
   },
@@ -66,13 +66,8 @@ export const feedback = [
     id: "feedback-3",
     content:
       "The name really goes with the service. It's a great platform which in real sense makes your health care up.",
-<<<<<<< HEAD
-    name: "Dr. Sahil Verma",
+    name: "Dr. Sohail Tuwari",
     title: "Cancer Specialist | Doctor",
-=======
-    name: "Yash Kandiyal",
-    title: "Cancer Specialist | Patient",
->>>>>>> 0af079e4dd859f6614db4a8b2025119d8d8442b8
     img: people03,
   },
 ];
