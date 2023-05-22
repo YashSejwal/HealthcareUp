@@ -19,13 +19,6 @@ export const navLinks = [
     id: "clients",
     title: "Medicines",
   },
-<<<<<<< HEAD
-  {
-    id: "login",
-    title: "Login",
-  },
-=======
->>>>>>> 0af079e4dd859f6614db4a8b2025119d8d8442b8
 ];
 
 export const features = [
