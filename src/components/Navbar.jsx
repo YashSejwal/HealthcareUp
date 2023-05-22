@@ -1,15 +1,16 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { close, menu } from "../assets";
 import { navLinks } from "../constants";
 import logo from "../assets/logoMain.png";
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+  const [path, setPath] = useState("/");
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <img src={logo} alt="hoobank" className="w-[164px] h-[52px]" />
+      <img src={logo} alt="healthcare" className="w-[164px] h-[52px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
@@ -23,6 +24,11 @@ const Navbar = () => {
             <a href={`#${nav.id}`}>{nav.title}</a>
           </li>
         ))}
+        <li
+          style={{ color: "white", marginLeft: "15px" }}
+        >
+          <Link to="/loginpatient">Login</Link>
+        </li>
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -50,6 +56,11 @@ const Navbar = () => {
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))}
+            <li
+              style={{ color: "white", marginLeft: "15px" }}
+            >
+              <Link to="/loginpatient">Login</Link>
+            </li>
           </ul>
         </div>
       </div>

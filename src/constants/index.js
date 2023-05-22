@@ -19,10 +19,6 @@ export const navLinks = [
     id: "clients",
     title: "Medicines",
   },
-  {
-    id: "clients",
-    title: "Login",
-  },
 ];
 
 export const features = [
@@ -54,7 +50,7 @@ export const feedback = [
     id: "feedback-1",
     content:
       "The next-generation platform which serves all your health needs.                   #bestInClass",
-    name: "Deepanshu Sharma",
+    name: "Yash Makhija",
     title: "HIV & Aids | Patient",
     img: people01,
   },
@@ -62,15 +58,15 @@ export const feedback = [
     id: "feedback-2",
     content:
       "Healthcare Up makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Vishal Maurya",
-    title: "Polio | Patient",
+    name: "Yash Sejwal",
+    title: "Blood Cancer | Patient",
     img: people02,
   },
   {
     id: "feedback-3",
     content:
       "The name really goes with the service. It's a great platform which in real sense makes your health care up.",
-    name: "Dr. Sahil Verma",
+    name: "Yash Kandiyal",
     title: "Cancer Specialist | Patient",
     img: people03,
   },
