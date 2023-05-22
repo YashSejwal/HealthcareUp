@@ -20,7 +20,7 @@ export const navLinks = [
     title: "Medicines",
   },
   {
-    id: "clients",
+    id: "login",
     title: "Login",
   },
 ];
@@ -71,7 +71,7 @@ export const feedback = [
     content:
       "The name really goes with the service. It's a great platform which in real sense makes your health care up.",
     name: "Dr. Sahil Verma",
-    title: "Cancer Specialist | Patient",
+    title: "Cancer Specialist | Doctor",
     img: people03,
   },
 ];
