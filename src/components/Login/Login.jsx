@@ -148,7 +148,7 @@ const Login = () => {
                 <br />
                 <span className="line">
                   {/*put router link here*/}
-                  <a href="#" style={{marginLeft:"2rem"}}>Sign Up</a>
+                  <a href="/register" style={{marginLeft:"2rem"}}>Sign Up</a>
                 </span>
               </p>
             </form>
