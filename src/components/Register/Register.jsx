@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../../api/axios';
+import './register.css'
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -81,7 +82,7 @@ const Register = () => {
     }
 
     return (
-        <>
+        <div className="reg">
             {success ? (
                 <section>
                     <h1>Success!</h1>
@@ -100,6 +101,7 @@ const Register = () => {
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>
                         <input
+                            style={{borderColor:"black"}}
                             type="text"
                             id="username"
                             ref={userRef}
@@ -120,13 +122,17 @@ const Register = () => {
                         </p>
 
 
-                        <label htmlFor="password">
+                        <label htmlFor="password" >
                             Password:
                             <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
                         <input
+<<<<<<< HEAD
                             style={{ display: 'none', visibility: 'hidden', opacity: '1'}}
+=======
+                            style={{borderColor:"black"}}
+>>>>>>> 7ffb5d43557a5f528bd991658969a5d0134ca0ab
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
@@ -151,6 +157,7 @@ const Register = () => {
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
                         <input
+                            style={{borderColor:"black"}}
                             type="password"
                             id="confirm_pwd"
                             onChange={(e) => setMatchPwd(e.target.value)}
@@ -177,7 +184,7 @@ const Register = () => {
                     </p>
                 </section>
             )}
-        </>
+        </div>
     )
 }
 
