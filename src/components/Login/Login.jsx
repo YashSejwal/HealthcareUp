@@ -7,7 +7,7 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import CTA from "../CTA";
 const Login = () => {
-  const { setAuth } = useContext(AuthContext);
+  const {setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
 
@@ -35,19 +35,24 @@ const Login = () => {
         LOGIN_URL,
         JSON.stringify({ user, pwd }),
         {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
+          headers: { 
+            "Content-Type": "application/json",
+            'Access-Control-Allow-Origin': '*',
+          },
+          // withCredentials: true,
         }
       );
       console.log(JSON.stringify(response?.data));
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
+      console.log(accessToken)
       const roles = response?.data?.roles;
       setAuth({ user, pwd, roles, accessToken });
       setUser("");
       setPwd("");
       setSuccess(true);
     } catch (err) {
+      console.log(err)
       if (!err?.response) {
         setErrMsg("No Server Response");
       } else if (err.response?.status === 400) {
@@ -117,6 +122,8 @@ const Login = () => {
                 onChange={(e) => setPwd(e.target.value)}
                 value={pwd}
                 required
+                style={{color:"black"}}
+
               />
                 <label >Login For:</label>
               <div style={{ display: "flex", flexDirection: "row" }}>
