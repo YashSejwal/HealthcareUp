@@ -96,7 +96,6 @@ class Appointment extends React.Component {
             <div className="container">
               <div className="section-title">
                 <h2>Make an Appointment</h2>
-                <p>fjkhj</p>
               </div>
 
               <form

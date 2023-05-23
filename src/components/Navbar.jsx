@@ -27,6 +27,11 @@ const Navbar = () => {
         <li
           style={{ color: "white", marginLeft: "15px" }}
         >
+          <Link to="/appointment">Appointment</Link>
+        </li>
+        <li
+          style={{ color: "white", marginLeft: "15px" }}
+        >
           <Link to="/loginpatient">Login</Link>
         </li>
       </ul>
