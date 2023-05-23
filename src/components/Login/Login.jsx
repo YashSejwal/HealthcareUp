@@ -101,6 +101,7 @@ const Login = () => {
               <label htmlFor="username">Username:</label>
               <input
                 type="text"
+                style={{color:"black"}}
                 id="username"
                 ref={userRef}
                 autoComplete="off"

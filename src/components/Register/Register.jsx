@@ -9,6 +9,7 @@ import axios from "../../api/axios";
 import "./register.css";
 import Navbar from "../../components/Navbar";
 import styles from "../../style";
+import { Link } from "react-router-dom";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -29,7 +30,6 @@ const Register = () => {
   const [matchPwd, setMatchPwd] = useState("");
   const [validMatch, setValidMatch] = useState(false);
   const [matchFocus, setMatchFocus] = useState(false);
-
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -101,7 +101,7 @@ const Register = () => {
           <section>
             <h1>Success!</h1>
             <p>
-              <a href="#">Sign In</a>
+              <Link to ="/loginpatient">Sign In</Link>
             </p>
           </section>
         ) : (
@@ -117,10 +117,10 @@ const Register = () => {
             <form onSubmit={handleSubmit} style={{marginLeft:"100px"}}>
               <label htmlFor="username">
                 Username                  
-              </label> <br/>
-            <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",width:"500px",marginLeft:"100px"}}>
+              </label> <br/> <br/>
+            <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1200px",marginLeft:"-112px"}}>
               <input
-                style={{ borderColor: "black" }}
+                style={{ borderColor: "black",color:"black" }}
                 type="text"
                 id="username"
                 ref={userRef}
@@ -132,7 +132,8 @@ const Register = () => {
                 aria-describedby="uidnote"
                 onFocus={() => setUserFocus(true)}
                 onBlur={() => setUserFocus(false)}
-              />
+              /> 
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
               <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
 4 to 24 characters.
                 Must begin with a letter. 
@@ -145,44 +146,42 @@ const Register = () => {
                 }
               >
                 
-              </p>
-
+              </p><br/> 
+             
               <label htmlFor="password">
-                Password 
+                Password  <br/>
               </label>
+              <br/> 
+              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-122px"}}>
               <input
-                style={{ borderColor: "black" }}
+                style={{ borderColor: "black",letterSpacing:"3px","::placeholder": {
+                    color: "red", // Customize the color of the placeholder text
+                    fontStyle: "italic", // Add additional styles as needed
+                  }, }}
+
                 type="password"
                 id="password"
                 onChange={(e) => setPwd(e.target.value)}
                 value={pwd}
                 required
+                placeholder="Password"
                 aria-invalid={validPwd ? "false" : "true"}
                 aria-describedby="pwdnote"
                 onFocus={() => setPwdFocus(true)}
                 onBlur={() => setPwdFocus(false)}
-              />
-              <p
-                id="pwdnote"
-                className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
-              >
-                <FontAwesomeIcon icon={faInfoCircle} />
+              />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
                 8 to 24 characters.
-                <br />
-                Must include uppercase and lowercase letters, a number and a
-                special character.
-                <br />
-                Allowed special characters:{" "}
-                <span aria-label="exclamation mark">!</span>{" "}
-                <span aria-label="at symbol">@</span>{" "}
-                <span aria-label="hashtag">#</span>{" "}
-                <span aria-label="dollar sign">$</span>{" "}
-                <span aria-label="percent">%</span>
-              </p>
+                Must include an uppercase letter, a number and a
+                special character.</p>
+              </div>
+              <br/> <br/>
 
               <label htmlFor="confirm_pwd">
                 Confirm Password:
               </label>
+              <br/> <br/>
+              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-352px"}}>
               <input
                 style={{ borderColor: "black" }}
                 type="password"
@@ -194,17 +193,10 @@ const Register = () => {
                 aria-describedby="confirmnote"
                 onFocus={() => setMatchFocus(true)}
                 onBlur={() => setMatchFocus(false)}
-              />
-              <p
-                id="confirmnote"
-                className={
-                  matchFocus && !validMatch ? "instructions" : "offscreen"
-                }
-              >
-                <FontAwesomeIcon icon={faInfoCircle} />
-                Must match the first password input field.
-              </p>
-
+              />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
+               Must be same as the password.</p>
+              </div><br/> <br/><br/> 
               <button
                 disabled={!validName || !validPwd || !validMatch ? true : false}
               >
