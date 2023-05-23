@@ -7,7 +7,8 @@ import Navbar from "../Navbar";
 import Footer from "../Footer";
 import CTA from "../CTA";
 import { Link,useNavigate } from "react-router-dom";
-import Appointment from '../Appointments/appointment'
+import Appointment from '../Appointments/appointment';
+import patientimg from "../../assets/patient.png";
 const Login = () => {
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
@@ -85,7 +86,7 @@ const Login = () => {
             </div>
           </div>
           <div className="formlogin">
-            <img src="" alt="Image of a person" style={{ float: "left" }} />
+            <img src={patientimg} alt="Image of a person" style={{ float: "left" }} />
 
             <form
               onSubmit={handleSubmit}

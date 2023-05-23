@@ -10,6 +10,7 @@ import styles from "../../style";
 import '../../index.css';
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import bg from "../../assets/bgAp.png";
 // import Cookies from "js-cookie";
 // import Departments from "../Departments";
 class Appointment extends React.Component {
@@ -71,33 +72,33 @@ class Appointment extends React.Component {
   render() {
     return (
       <>
-        <div id="appointmentpatient" className="bg-primary w-full overflow-hidden loginDiv ">
+        <div id="appointmentpatient" className="bg-primary w-full overflow-hidden loginDiv appointmentdiv ">
           <Navbar/>
           <Nav tabs className={` ${styles.flexCenter}`} >
             <NavItem className="links" >
               <NavLink >
-                <Link to="/loginpatient">Doctor List</Link>
+                <Link to="/doctorlist">Doctor List</Link>
               </NavLink>
             </NavItem>
             <NavItem className="links" >
               <NavLink active>
-                <Link to="/appointment/bookAppointment">Book Appointment</Link>
+                <Link to="/getPatientProfile">Manage Appointment</Link>
               </NavLink>
             </NavItem>
             <NavItem className="links" >
               <NavLink  >
-                <Link to="/appointment/getPatientProfile">Edit Profile</Link>
+                <Link to="/getPatientProfile">Edit Profile</Link>
               </NavLink>
             </NavItem>
             <NavItem className="links">
               <NavLink >
-                <Link to="/appointment/patientAppointments">
-                  View Appointments
+                <Link to="/patientAppointments">
+                  View Patient History
                 </Link>
               </NavLink>
             </NavItem>
           </Nav>
-          <section className="appointment section-bg ">
+          <section className="appointment ">
             <div className="container">
               <div className="section-title" style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
                 <h1 style={{justifyContent:"center",fontSize:"56px", marginLeft:"5rem"}}>Make an Appointment</h1>

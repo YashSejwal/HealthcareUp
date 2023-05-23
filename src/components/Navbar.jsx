@@ -9,25 +9,25 @@ const Navbar = () => {
   const [path, setPath] = useState("/");
 
   return (
-    <nav className="w-full flex py-6 justify-evenly  items-center navbar">
-      <img src={logo} alt="healthcare" className="w-[284px] h-[65px]" />
+    <nav className="w-full flex py-6 justify-between items-center navbar">
+      <Link to="/"><img src={logo} alt="healthcare" className="w-[284px] h-[65px]" /></Link>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        {navLinks.map((nav, index) => (
-          <li
-            key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${
-              active === nav.title ? "text-white" : "text-dimWhite"
-            } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
-            onClick={() => setActive(nav.title)}
-          >
-            <a href={`#${nav.id}`}>{nav.title}</a>
-          </li>
-        ))}
+
+        <li
+          style={{ color: "white" }}
+        >
+          <Link to="/">Home</Link>
+        </li>
         <li
           style={{ color: "white", marginLeft: "15px" }}
         >
-          <Link to="/payment">Medicines</Link>
+          <a href="#features">Features</a>
+        </li>
+        <li
+          style={{ color: "white", marginLeft: "15px" }}
+        >
+          <Link to="/doctorlist">Medicines</Link>
         </li>
         {/* payment */}
         <li
@@ -36,7 +36,7 @@ const Navbar = () => {
           <Link to="/appointment">Appointment</Link>
         </li>
         <li
-          style={{ color: "white", marginLeft: "15px" }}
+          style={{ color: "white", marginLeft: "15px",marginRight:"15px" }}
         >
           <Link to="/loginpatient">Login</Link>
         </li>
