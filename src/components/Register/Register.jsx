@@ -117,6 +117,10 @@ const Register = () => {
             <form onSubmit={handleSubmit} style={{marginLeft:"100px"}}>
               <label htmlFor="username" className="labels">
                 Username                  
+              <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
+4 to 24 characters.
+                Must begin with a letter. 
+                Letters, numbers, underscores, hyphens allowed.</p>
               </label> <br/> <br/>
             <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1200px",marginLeft:"-132px"}}>
               <input
@@ -134,10 +138,6 @@ const Register = () => {
                 onBlur={() => setUserFocus(false)}
               /> 
               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
-4 to 24 characters.
-                Must begin with a letter. 
-                Letters, numbers, underscores, hyphens allowed.</p>
                 </div>
               <p
                 id="uidnote"
@@ -151,6 +151,10 @@ const Register = () => {
               <label htmlFor="password" className="labels">
                 Password  <br/>
               </label>
+                  <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
+                    8 to 24 characters.
+                    Must include an uppercase letter, a number and a
+                    special character.</p>
               <br/> 
               <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-145px"}}>
               <input
@@ -170,10 +174,6 @@ const Register = () => {
                 onFocus={() => setPwdFocus(true)}
                 onBlur={() => setPwdFocus(false)}
               />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
-                8 to 24 characters.
-                Must include an uppercase letter, a number and a
-                special character.</p>
               </div>
               <br/> <br/>
 

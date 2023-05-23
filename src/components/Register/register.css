@@ -31,5 +31,12 @@ label{
 
 .buttonSignUp{
     font-family: 'Lato',sans-serif;
-    margin-right: 270px;
+    margin-right: 27rem;
 }
+#username
+{margin-left: 10%;}
+
+#password{margin-left: 11%;}
+
+#confirm_pwd
+{margin-left: 18%;}
