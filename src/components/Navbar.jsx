@@ -9,7 +9,7 @@ const Navbar = () => {
   const [path, setPath] = useState("/");
 
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
+    <nav className="w-full flex py-6 justify-evenly  items-center navbar">
       <img src={logo} alt="healthcare" className="w-[284px] h-[65px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">

@@ -105,7 +105,7 @@ const Register = () => {
             </p>
           </section>
         ) : (
-          <section>
+          <section style={{backgroundColor:""}}>
             <p
               ref={errRef}
               className={errMsg ? "errmsg" : "offscreen"}
@@ -113,12 +113,12 @@ const Register = () => {
             >
               {errMsg}
             </p>
-            <h1>Register</h1>
+            <h1>Register</h1> 
             <form onSubmit={handleSubmit} style={{marginLeft:"100px"}}>
-              <label htmlFor="username">
+              <label htmlFor="username" className="labels">
                 Username                  
               </label> <br/> <br/>
-            <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1200px",marginLeft:"-112px"}}>
+            <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1200px",marginLeft:"-132px"}}>
               <input
                 style={{ borderColor: "black",color:"black" }}
                 type="text"
@@ -148,11 +148,11 @@ const Register = () => {
                 
               </p><br/> 
              
-              <label htmlFor="password">
+              <label htmlFor="password" className="labels">
                 Password  <br/>
               </label>
               <br/> 
-              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-122px"}}>
+              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-145px"}}>
               <input
                 style={{ borderColor: "black",letterSpacing:"3px","::placeholder": {
                     color: "red", // Customize the color of the placeholder text
@@ -177,11 +177,11 @@ const Register = () => {
               </div>
               <br/> <br/>
 
-              <label htmlFor="confirm_pwd">
-                Confirm Password:
+              <label htmlFor="confirm_pwd" className="labels">
+                Confirm Password 
               </label>
               <br/> <br/>
-              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-352px"}}>
+              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-338px"}}>
               <input
                 style={{ borderColor: "black" }}
                 type="password"
@@ -196,14 +196,14 @@ const Register = () => {
               />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
               <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
                Must be same as the password.</p>
-              </div><br/> <br/><br/> 
-              <button
+              </div><br/> <br/>
+              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-338px"}}>
+              <button className="buttonSignUp"
                 disabled={!validName || !validPwd || !validMatch ? true : false}
               >
                 Sign Up
               </button>
-            </form>
-            <p>
+              <p>
               Already registered?
               <br />
               <span className="line">
@@ -211,6 +211,9 @@ const Register = () => {
                 <a href="#">Sign In</a>
               </span>
             </p>
+            </div>
+            </form>
+            
           </section>
         )}
       </div>

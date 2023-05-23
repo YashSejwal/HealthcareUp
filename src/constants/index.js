@@ -41,25 +41,25 @@ export const feedback = [
   {
     id: "feedback-1",
     content:
-      "The next-generation platform which serves all your health needs.                   #bestInClass",
-    name: "Veshel Sengh",
-    title: "HIV & Aids | Patient",
+      "The best and #1 CARDIOLOGY Specialist in North India.                  #bestInClass Treated over 10600+ Patients.",
+    name: "Dr. Vishal Maurya",
+    title: "Cardiologist  Venkateshwar Hospital",
     img: people01,
   },
   {
     id: "feedback-2",
     content:
-      "Healthcare Up makes your life easier. If you're lucky to have it, you're lucky.",
-    name: "Dipensho Komer",
-    title: "Blood Cancer | Patient",
+      "India's best neurologist is on our platform. He is the best in his field. #1 Treated over 4600+ Patients.",
+    name: "Dr. Deep Sharma",
+    title: "Neurologist RamManoharL Hospital",
     img: people02,
   },
   {
     id: "feedback-3",
     content:
-      "The name really goes with the service. It's a great platform which in real sense makes your health care up.",
-    name: "Dr. Sohail Tuwari",
-    title: "Cancer Specialist | Doctor",
+      "The name really goes with the service. He is one of the best Orthologist all over the globe. Treated over 3600+ Patients.",
+    name: "Dr. Sahil Khan",
+    title: "Orthologist  ApolloOneSuperPro Hospital",
     img: people03,
   },
 ];
