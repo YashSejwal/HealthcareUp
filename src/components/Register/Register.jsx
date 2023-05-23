@@ -88,112 +88,11 @@ const Register = () => {
     }
   };
 
-<<<<<<< HEAD
   return (
     <div className="bg-primary w-full overflow-hidden">
       <div className={`${styles.paddingX} ${styles.flexCenter}`}>
         <div className={`${styles.boxWidth}`}>
           <Navbar />
-=======
-    return (
-        <div className="reg">
-            {success ? (
-                <section>
-                    <h1>Success!</h1>
-                    <p>
-                        <a href="#">Sign In</a>
-                    </p>
-                </section>
-            ) : (
-                <section>
-                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1 style={{color:"white", marginBottom:"50px"}}>Register</h1>
-                    <form onSubmit={handleSubmit}>
-                        <span>
-                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            4 to 24 characters.&nbsp;&nbsp;&nbsp;&nbsp;
-                            Must begin with a letter.&nbsp;&nbsp;&nbsp;
-                            Letters, numbers, underscores, hyphens allowed.&nbsp;&nbsp;&nbsp;&nbsp;
-                        </p><br/>
-                        <label htmlFor="username" style={{marginRight:"0px"}}>
-                            Username:
-                            
-                        </label><br/><br/></span>
-                        <input
-                            style={{borderColor:"black",marginLeft:"40px"}}
-                            type="text"
-                            id="username"
-                            ref={userRef}
-                            autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
-                            required
-                            aria-invalid={validName ? "false" : "true"}
-                            aria-describedby="uidnote"
-                            onFocus={() => setUserFocus(true)}
-                            onBlur={() => setUserFocus(false)}
-                        />
-                        
-                        <br/><br/>
-
-                        <label htmlFor="password" style={{marginRight:"60px"}} >
-                            Password:
-                            
-                        </label> <br/><br/>
-                        <input
-                           style={{borderColor:"black",marginLeft:"40px"}}
-                            type="password"
-                            id="password"
-                            onChange={(e) => setPwd(e.target.value)}
-                            value={pwd}
-                            required
-                            aria-invalid={validPwd ? "false" : "true"}
-                            aria-describedby="pwdnote"
-                            onFocus={() => setPwdFocus(false)}
-                            onBlur={() => setPwdFocus(false)}
-                        />
-                        <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            8 to 24 characters.<br />
-                            Must include uppercase and lowercase letters, a number and a special character.<br />
-                            Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
-                        </p>
-
-
-                        <label htmlFor="confirm_pwd">
-                            Confirm Password:
-                            
-                        </label>
-                        <input
-                            style={{borderColor:"black"}}
-                            type="password"
-                            id="confirm_pwd"
-                            onChange={(e) => setMatchPwd(e.target.value)}
-                            value={matchPwd}
-                            required
-                            aria-invalid={validMatch ? "false" : "true"}
-                            aria-describedby="confirmnote"
-                            onFocus={() => setMatchFocus(true)}
-                            onBlur={() => setMatchFocus(false)}
-                        />
-                        <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            Must match the first password input field.
-                        </p>
-
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
-                    </form>
-                    <p>
-                        Already registered?<br />
-                        <span className="line">
-                            {/*put router link here*/}
-                            <a href="#">Sign In</a>
-                        </span>
-                    </p>
-                </section>
-            )}
->>>>>>> d7dc7bdf8ba96a74121e04986bb6fb3df8461de6
         </div>
       </div>
 
@@ -215,18 +114,11 @@ const Register = () => {
               {errMsg}
             </p>
             <h1>Register</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{marginLeft:"100px"}}>
               <label htmlFor="username">
-                Username:
-                <FontAwesomeIcon
-                  icon={faCheck}
-                  className={validName ? "valid" : "hide"}
-                />
-                <FontAwesomeIcon
-                  icon={faTimes}
-                  className={validName || !user ? "hide" : "invalid"}
-                />
-              </label>
+                Username                  
+              </label> <br/>
+            <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between",width:"500px",marginLeft:"100px"}}>
               <input
                 style={{ borderColor: "black" }}
                 type="text"
@@ -241,30 +133,22 @@ const Register = () => {
                 onFocus={() => setUserFocus(true)}
                 onBlur={() => setUserFocus(false)}
               />
+              <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
+4 to 24 characters.
+                Must begin with a letter. 
+                Letters, numbers, underscores, hyphens allowed.</p>
+                </div>
               <p
                 id="uidnote"
                 className={
                   userFocus && user && !validName ? "instructions" : "offscreen"
                 }
               >
-                <FontAwesomeIcon icon={faInfoCircle} />
-                4 to 24 characters.
-                <br />
-                Must begin with a letter.
-                <br />
-                Letters, numbers, underscores, hyphens allowed.
+                
               </p>
 
               <label htmlFor="password">
-                Password:
-                <FontAwesomeIcon
-                  icon={faCheck}
-                  className={validPwd ? "valid" : "hide"}
-                />
-                <FontAwesomeIcon
-                  icon={faTimes}
-                  className={validPwd || !pwd ? "hide" : "invalid"}
-                />
+                Password 
               </label>
               <input
                 style={{ borderColor: "black" }}
@@ -298,14 +182,6 @@ const Register = () => {
 
               <label htmlFor="confirm_pwd">
                 Confirm Password:
-                <FontAwesomeIcon
-                  icon={faCheck}
-                  className={validMatch && matchPwd ? "valid" : "hide"}
-                />
-                <FontAwesomeIcon
-                  icon={faTimes}
-                  className={validMatch || !matchPwd ? "hide" : "invalid"}
-                />
               </label>
               <input
                 style={{ borderColor: "black" }}
