@@ -6,11 +6,13 @@ const LOGIN_URL = "/auth";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import CTA from "../CTA";
+import { Link,useNavigate } from "react-router-dom";
+import Appointment from '../Appointments/appointment'
 const Login = () => {
-  const {setAuth } = useContext(AuthContext);
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
-
+  const history = useNavigate()
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
@@ -18,9 +20,11 @@ const Login = () => {
   const [patient, setPatient] = useState("");
   const [doctor, setDoctor] = useState("");
   const [admin, setAdmin] = useState("");
-
   useEffect(() => {
     userRef.current.focus();
+    if(success==true){
+      history("/afterlogin");
+    }
   }, []);
 
   useEffect(() => {
@@ -35,9 +39,9 @@ const Login = () => {
         LOGIN_URL,
         JSON.stringify({ user, pwd }),
         {
-          headers: { 
+          headers: {
             "Content-Type": "application/json",
-            'Access-Control-Allow-Origin': '*',
+            "Access-Control-Allow-Origin": "*",
           },
           // withCredentials: true,
         }
@@ -45,14 +49,14 @@ const Login = () => {
       console.log(JSON.stringify(response?.data));
       //console.log(JSON.stringify(response));
       const accessToken = response?.data?.accessToken;
-      console.log(accessToken)
+      console.log(accessToken);
       const roles = response?.data?.roles;
       setAuth({ user, pwd, roles, accessToken });
       setUser("");
       setPwd("");
       setSuccess(true);
     } catch (err) {
-      console.log(err)
+      console.log(err);
       if (!err?.response) {
         setErrMsg("No Server Response");
       } else if (err.response?.status === 400) {
@@ -70,11 +74,8 @@ const Login = () => {
     <>
       {success ? (
         <section>
-          <h1>You are logged in!</h1>
-          <br />
-          <p>
-            <a href="#">Go to Home</a>
-          </p>
+          {history("/afterlogin")}
+          <Appointment/>
         </section>
       ) : (
         <div className="bg-primary w-full overflow-hidden loginDiv ">
@@ -106,7 +107,7 @@ const Login = () => {
               <label htmlFor="username">Username:</label>
               <input
                 type="text"
-                style={{color:"black"}}
+                style={{ color: "black" }}
                 id="username"
                 ref={userRef}
                 autoComplete="off"
@@ -122,23 +123,28 @@ const Login = () => {
                 onChange={(e) => setPwd(e.target.value)}
                 value={pwd}
                 required
-                style={{color:"black"}}
-
+                style={{ color: "black" }}
               />
-                <label >Login For:</label>
+              <label>Login For:</label>
               <div style={{ display: "flex", flexDirection: "row" }}>
-                
                 <input
                   type="radio"
                   id="Patient"
                   onChange={(e) => setPatient(e.target.value)}
                   value={patient}
                   required
-                />&nbsp;
+                />
+                &nbsp;
                 <label htmlFor="type">Patient</label>&nbsp;&nbsp;&nbsp;
                 <br></br>
-                <input type="radio" id="doctor" name="doctor" onChange={(e) => setPatient(e.target.value)}
-                  value={patient} />&nbsp;
+                <input
+                  type="radio"
+                  id="doctor"
+                  name="doctor"
+                  onChange={(e) => setPatient(e.target.value)}
+                  value={patient}
+                />
+                &nbsp;
                 <label htmlFor="doctor">Doctor</label>&nbsp;&nbsp;&nbsp;
                 <br />
                 <input
@@ -147,7 +153,8 @@ const Login = () => {
                   name="admin"
                   onChange={(e) => setAdmin(e.target.value)}
                   value={admin}
-                />&nbsp;
+                />
+                &nbsp;
                 <label htmlFor="admin">Admin</label>
               </div>
               <button>Sign In</button>
@@ -156,7 +163,9 @@ const Login = () => {
                 <br />
                 <span className="line">
                   {/*put router link here*/}
-                  <a href="/register" style={{marginLeft:"2rem"}}>Sign Up</a>
+                  <a href="/register" style={{ marginLeft: "2rem" }}>
+                    Sign Up
+                  </a>
                 </span>
               </p>
             </form>

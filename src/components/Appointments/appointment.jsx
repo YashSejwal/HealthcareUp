@@ -6,6 +6,10 @@ import {
   NavLink,
   Nav,
 } from "reactstrap";
+import styles from "../../style";
+import '../../index.css';
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 // import Cookies from "js-cookie";
 // import Departments from "../Departments";
 class Appointment extends React.Component {
@@ -67,35 +71,36 @@ class Appointment extends React.Component {
   render() {
     return (
       <>
-        <div id="appointmentpatient">
-          <Nav tabs>
-            <NavItem>
-              <NavLink>
+        <div id="appointmentpatient" className="bg-primary w-full overflow-hidden loginDiv ">
+          <Navbar/>
+          <Nav tabs className={` ${styles.flexCenter}`} >
+            <NavItem className="links" >
+              <NavLink >
                 <Link to="/loginpatient">Doctor List</Link>
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="links" >
               <NavLink active>
                 <Link to="/appointment/bookAppointment">Book Appointment</Link>
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink>
+            <NavItem className="links" >
+              <NavLink  >
                 <Link to="/appointment/getPatientProfile">Edit Profile</Link>
               </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink>
+            <NavItem className="links">
+              <NavLink >
                 <Link to="/appointment/patientAppointments">
                   View Appointments
                 </Link>
               </NavLink>
             </NavItem>
           </Nav>
-          <section id="appointment" className="appointment section-bg">
+          <section className="appointment section-bg ">
             <div className="container">
-              <div className="section-title">
-                <h2>Make an Appointment</h2>
+              <div className="section-title" style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+                <h1 style={{justifyContent:"center",fontSize:"56px", marginLeft:"5rem"}}>Make an Appointment</h1>
               </div>
 
               <form
@@ -106,6 +111,7 @@ class Appointment extends React.Component {
               >
                 <div className="row">
                   <div className="col-md-4 form-group">
+                    <label>Name: </label>
                     <input
                       // innerRef={this.inputRef}
                       type="text"
@@ -122,6 +128,7 @@ class Appointment extends React.Component {
                     <div className="validate"></div>
                   </div>
                   <div className="col-md-4 form-group mt-3 mt-md-0">
+                    <label>Email: </label>
                     <input
                       type="email"
                       className="form-control"
@@ -137,6 +144,7 @@ class Appointment extends React.Component {
                     <div className="validate"></div>
                   </div>
                   <div className="col-md-4 form-group mt-3 mt-md-0">
+                    <label>Phone Number: </label>
                     <input
                       type="tel"
                       className="form-control"
@@ -154,6 +162,7 @@ class Appointment extends React.Component {
                 </div>
                 <div className="row">
                   <div className="col-md-4 form-group mt-3">
+                    <label>Appointment Date: </label>
                     <input
                       type="datetime"
                       name="date"
@@ -168,7 +177,8 @@ class Appointment extends React.Component {
                     />
                     <div className="validate"></div>
                   </div>
-                  <div className="col-md-4 form-group mt-3">
+                  <div className="col-md-4 form-group mt-3" style={{color:"black"}}>
+                    <label>Department: </label>
                     <select
                       name="department"
                       id="department"
@@ -181,7 +191,8 @@ class Appointment extends React.Component {
                     </select>
                     <div className="validate"></div>
                   </div>
-                  <div className="col-md-4 form-group mt-3">
+                  <div className="col-md-4 form-group mt-3" style={{color:"black",display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+                    <label>Doctor: </label>
                     <select name="doctor" id="doctor" className="form-select">
                       <option value="">Select Doctor</option>
                       <option value="Doctor 1">Doctor 1</option>
@@ -192,7 +203,8 @@ class Appointment extends React.Component {
                   </div>
                 </div>
 
-                <div className="form-group mt-3">
+                <div className="form-group mt-3" style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
+                  <label>Any message for the Doctor: </label>
                   <textarea
                     className="form-control"
                     name="message"
@@ -209,12 +221,13 @@ class Appointment extends React.Component {
                     you!
                   </div>
                 </div>
-                <div className="text-center">
-                  <button type="submit" onClick={(e)=>{this.handleSubmit(e)}}>Make an Appointment</button>
+                <div className="text-center" style={{paddingBottom:"2rem"}}>
+                  <button type="submit"  onClick={(e)=>{this.handleSubmit(e)}}>Make an Appointment</button>
                 </div>
               </form>
             </div>
           </section>
+          <Footer/>
         </div>
       </>
     );

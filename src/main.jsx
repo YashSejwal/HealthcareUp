@@ -6,6 +6,7 @@ import "./index.css";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import Appointment from "./components/Appointments/appointment";
+import AfterLogin from "./components/Login/AfterLogin";
 import {AuthProvider} from "./context/AuthProvider";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -16,6 +17,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/loginpatient" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/appointment" element={<Appointment />} />
+          <Route path="/afterlogin" element={<AfterLogin />} />
+
         </Routes>
       </BrowserRouter>
     </AuthProvider>

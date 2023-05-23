@@ -177,6 +177,10 @@
 }
 .appointment .php-email-form {
   width: 100%;
+  align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .appointment .php-email-form .form-group {
@@ -270,3 +274,31 @@
 }
 
 
+.appointment{
+  display: flex;
+  flex-direction: column;
+  align-content: center !important;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.appointment .container{
+  display: flex;
+  flex-direction: column;
+  align-content: center !important;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid rgba(50, 36, 36, 1);
+}
+.form-group{
+  display:flex;flex-direction:row;justify-content:space-between;
+}
+.links{
+  border:2px solid rgba(50, 36, 36, 1);
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+.links:hover{
+  border:2px solid #878282;
+}
