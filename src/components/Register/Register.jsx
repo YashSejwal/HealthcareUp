@@ -10,6 +10,7 @@ import "./register.css";
 import Navbar from "../../components/Navbar";
 import styles from "../../style";
 import { Link } from "react-router-dom";
+import logins from "../../assets/logins.png";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -99,13 +100,13 @@ const Register = () => {
       <div className="reg">
         {success ? (
           <section>
-            <h1>Success!</h1>
+            <h1 className="titleLogin">Success!</h1>
             <p>
               <Link to ="/loginpatient">Sign In</Link>
             </p>
           </section>
         ) : (
-          <section style={{backgroundColor:""}}>
+          <section className="loginForm" style={{backgroundColor:""}}>
             <p
               ref={errRef}
               className={errMsg ? "errmsg" : "offscreen"}
@@ -113,20 +114,20 @@ const Register = () => {
             >
               {errMsg}
             </p>
-            <h1>Register</h1> 
-            <form onSubmit={handleSubmit} style={{marginLeft:"100px"}}>
+            <h1 className="titleLogin">Register</h1> 
+            <form onSubmit={handleSubmit} style={{marginLeft:"50px"}}>
               <label htmlFor="username" className="labels">
                 Username                  
-              <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
-4 to 24 characters.
-                Must begin with a letter. 
-                Letters, numbers, underscores, hyphens allowed.</p>
-              </label> <br/> <br/>
-            <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1200px",marginLeft:"-132px"}}>
+              <p  className="impinfo"><FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
+              &nbsp; 
+              Letters, numbers, underscores, hyphens allowed.</p>
+              </label> 
+            <div>
               <input
-                style={{ borderColor: "black",color:"black" }}
+                className="input-field"
                 type="text"
                 id="username"
+                placeholder="username"
                 ref={userRef}
                 autoComplete="off"
                 onChange={(e) => setUser(e.target.value)}
@@ -137,7 +138,7 @@ const Register = () => {
                 onFocus={() => setUserFocus(true)}
                 onBlur={() => setUserFocus(false)}
               /> 
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              
                 </div>
               <p
                 id="uidnote"
@@ -146,44 +147,39 @@ const Register = () => {
                 }
               >
                 
-              </p><br/> 
+              </p>
              
               <label htmlFor="password" className="labels">
                 Password  <br/>
               </label>
-                  <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
-                    8 to 24 characters.
-                    Must include an uppercase letter, a number and a
+                  <p style={{color:"white"}} className="impinfo"><FontAwesomeIcon icon={faInfoCircle} className="info-icon"/>&nbsp; 
+                    Must include an uppercase letter &
                     special character.</p>
-              <br/> 
-              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-145px"}}>
+              <div>
               <input
-                style={{ borderColor: "black",letterSpacing:"3px","::placeholder": {
-                    color: "red", // Customize the color of the placeholder text
-                    fontStyle: "italic", // Add additional styles as needed
-                  }, }}
-
+                className="input-field"
                 type="password"
                 id="password"
                 onChange={(e) => setPwd(e.target.value)}
                 value={pwd}
                 required
-                placeholder="Password"
+                placeholder="password"
                 aria-invalid={validPwd ? "false" : "true"}
                 aria-describedby="pwdnote"
                 onFocus={() => setPwdFocus(true)}
                 onBlur={() => setPwdFocus(false)}
-              />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              />
               </div>
-              <br/> <br/>
+             
 
               <label htmlFor="confirm_pwd" className="labels">
                 Confirm Password 
               </label>
-              <br/> <br/>
-              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-338px"}}>
+             
+              <div ><p style={{color:"white"}} className="impinfo"><FontAwesomeIcon icon={faInfoCircle} className="info-icon" />
+               &nbsp;  Must be same as the password.</p>
               <input
-                style={{ borderColor: "black" }}
+                className="input-field"
                 type="password"
                 id="confirm_pwd"
                 onChange={(e) => setMatchPwd(e.target.value)}
@@ -193,28 +189,27 @@ const Register = () => {
                 aria-describedby="confirmnote"
                 onFocus={() => setMatchFocus(true)}
                 onBlur={() => setMatchFocus(false)}
-              />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-              <p style={{color:"white"}}><FontAwesomeIcon icon={faInfoCircle} />
-               Must be same as the password.</p>
-              </div><br/> <br/>
-              <div style={{display:"flex",flexDirection:"row",justifyContent:"center",width:"1180px",marginLeft:"-338px"}}>
+              />
+              
+              </div>
+              <div >
+              <div className="flex" style={{marginBottom:"90px"}}>
               <button className="buttonSignUp"
                 disabled={!validName || !validPwd || !validMatch ? true : false}
               >
-                Sign Up
+                <Link to="/loginpatient">Sign Up</Link>
               </button>
-              <p>
-              Already registered?
-              <br />
+              <p className="formM">
+              Already registered? &nbsp;&nbsp;&nbsp;
               <span className="line">
                 {/*put router link here*/}
-                <a href="#">Sign In</a>
+                <Link to="/loginpatient">Sign In</Link>
               </span>
             </p>
             </div>
-            </form>
             
-          </section>
+            </div>
+            </form>          </section>
         )}
       </div>
     </div>

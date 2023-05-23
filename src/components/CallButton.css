@@ -22,7 +22,7 @@
 .callBtn{
     /* position: absolute; */
     bottom: 5%;
-    transform: translateX(970%);
+    transform: translateX(950%);
     position: sticky;
 }
 
@@ -46,7 +46,7 @@
     .callBtn {
       bottom: 2%;
       right: 2%;
-      transform: translateX(200%);
+      transform: translateX(340%);
     }
   }
   

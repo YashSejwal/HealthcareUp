@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { close, menu } from "../assets";
 import { navLinks } from "../constants";
 import logo from "../assets/logoMain.png";
+import './Navbar.css';
+import loginLogo from "../assets/loginLogo.png";
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
@@ -17,28 +19,29 @@ const Navbar = () => {
         <li
           style={{ color: "white" }}
         >
-          <Link to="/">Home</Link>
+          <Link to="/" className="navelement">Home</Link>
         </li>
         <li
           style={{ color: "white", marginLeft: "15px" }}
         >
-          <a href="#features">Features</a>
+          <a href="#features" className="navelement">Features</a>
         </li>
         <li
           style={{ color: "white", marginLeft: "15px" }}
         >
-          <Link to="/doctorlist">Medicines</Link>
+          <Link to="/doctorlist" className="navelement">Medicines</Link>
         </li>
         {/* payment */}
         <li
           style={{ color: "white", marginLeft: "15px" }}
         >
-          <Link to="/appointment">Appointment</Link>
+          <Link to="/appointment" className="navelement">Appointment</Link>
         </li>
         <li
           style={{ color: "white", marginLeft: "15px",marginRight:"15px" }}
         >
-          <Link to="/loginpatient">Login</Link>
+          <Link to="/loginpatient" className="navelement">Login 
+          <img src={loginLogo} style={{width:"34px"}} /></Link>
         </li>
       </ul>
 
