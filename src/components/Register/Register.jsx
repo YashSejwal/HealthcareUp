@@ -93,15 +93,21 @@ const Register = () => {
             ) : (
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
+                    <h1 style={{color:"white", marginBottom:"50px"}}>Register</h1>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="username">
+                        <span>
+                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
+                            <FontAwesomeIcon icon={faInfoCircle} />
+                            4 to 24 characters.&nbsp;&nbsp;&nbsp;&nbsp;
+                            Must begin with a letter.&nbsp;&nbsp;&nbsp;
+                            Letters, numbers, underscores, hyphens allowed.&nbsp;&nbsp;&nbsp;&nbsp;
+                        </p><br/>
+                        <label htmlFor="username" style={{marginRight:"0px"}}>
                             Username:
-                            <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
-                        </label>
+                            
+                        </label><br/><br/></span>
                         <input
-                            style={{borderColor:"black"}}
+                            style={{borderColor:"black",marginLeft:"40px"}}
                             type="text"
                             id="username"
                             ref={userRef}
@@ -114,21 +120,19 @@ const Register = () => {
                             onFocus={() => setUserFocus(true)}
                             onBlur={() => setUserFocus(false)}
                         />
-                        <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            4 to 24 characters.<br />
-                            Must begin with a letter.<br />
-                            Letters, numbers, underscores, hyphens allowed.
-                        </p>
+                        
+                        <br/><br/>
 
-
-                        <label htmlFor="password" >
+                        <label htmlFor="password" style={{marginRight:"60px"}} >
                             Password:
-                            <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
-                        </label>
+                            
+                        </label> <br/><br/>
                         <input
+<<<<<<< Updated upstream
                             style={{borderColor:"black"}}
+=======
+                           style={{borderColor:"black",marginLeft:"40px"}}
+>>>>>>> Stashed changes
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
@@ -149,8 +153,7 @@ const Register = () => {
 
                         <label htmlFor="confirm_pwd">
                             Confirm Password:
-                            <FontAwesomeIcon icon={faCheck} className={validMatch && matchPwd ? "valid" : "hide"} />
-                            <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
+                            
                         </label>
                         <input
                             style={{borderColor:"black"}}
