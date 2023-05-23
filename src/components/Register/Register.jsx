@@ -82,7 +82,7 @@ const Register = () => {
     }
 
     return (
-        <>
+        <div className="reg">
             {success ? (
                 <section>
                     <h1>Success!</h1>
@@ -101,6 +101,7 @@ const Register = () => {
                             <FontAwesomeIcon icon={faTimes} className={validName || !user ? "hide" : "invalid"} />
                         </label>
                         <input
+                            style={{borderColor:"black"}}
                             type="text"
                             id="username"
                             ref={userRef}
@@ -121,12 +122,13 @@ const Register = () => {
                         </p>
 
 
-                        <label htmlFor="password">
+                        <label htmlFor="password" >
                             Password:
                             <FontAwesomeIcon icon={faCheck} className={validPwd ? "valid" : "hide"} />
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
                         <input
+                            style={{borderColor:"black"}}
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
@@ -151,6 +153,7 @@ const Register = () => {
                             <FontAwesomeIcon icon={faTimes} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                         </label>
                         <input
+                            style={{borderColor:"black"}}
                             type="password"
                             id="confirm_pwd"
                             onChange={(e) => setMatchPwd(e.target.value)}
@@ -177,7 +180,7 @@ const Register = () => {
                     </p>
                 </section>
             )}
-        </>
+        </div>
     )
 }
 
