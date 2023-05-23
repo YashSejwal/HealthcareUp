@@ -128,11 +128,7 @@ const Register = () => {
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
                         <input
-<<<<<<< HEAD
-                            style={{ display: 'none', visibility: 'hidden', opacity: '1'}}
-=======
                             style={{borderColor:"black"}}
->>>>>>> 7ffb5d43557a5f528bd991658969a5d0134ca0ab
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
