@@ -99,7 +99,7 @@ class Appointment extends React.Component {
               </div>
 
               <form
-                action="forms/appointment.php"
+                // action="forms/appointment.php"
                 method="post"
                 role="form"
                 className="php-email-form"
@@ -210,7 +210,7 @@ class Appointment extends React.Component {
                   </div>
                 </div>
                 <div className="text-center">
-                  <button type="submit">Make an Appointment</button>
+                  <button type="submit" onClick={(e)=>{this.handleSubmit(e)}}>Make an Appointment</button>
                 </div>
               </form>
             </div>

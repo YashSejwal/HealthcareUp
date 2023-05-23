@@ -27,6 +27,12 @@ const Navbar = () => {
         <li
           style={{ color: "white", marginLeft: "15px" }}
         >
+          <Link to="/payment">Medicines</Link>
+        </li>
+        {/* payment */}
+        <li
+          style={{ color: "white", marginLeft: "15px" }}
+        >
           <Link to="/appointment">Appointment</Link>
         </li>
         <li
