@@ -128,11 +128,7 @@ const Register = () => {
                             
                         </label> <br/><br/>
                         <input
-<<<<<<< Updated upstream
-                            style={{borderColor:"black"}}
-=======
                            style={{borderColor:"black",marginLeft:"40px"}}
->>>>>>> Stashed changes
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
