@@ -126,6 +126,7 @@ const Register = () => {
                             <FontAwesomeIcon icon={faTimes} className={validPwd || !pwd ? "hide" : "invalid"} />
                         </label>
                         <input
+                            style={{ display: 'none', visibility: 'hidden', opacity: '1'}}
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
@@ -133,7 +134,7 @@ const Register = () => {
                             required
                             aria-invalid={validPwd ? "false" : "true"}
                             aria-describedby="pwdnote"
-                            onFocus={() => setPwdFocus(true)}
+                            onFocus={() => setPwdFocus(false)}
                             onBlur={() => setPwdFocus(false)}
                         />
                         <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
