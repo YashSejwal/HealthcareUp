@@ -1,4 +1,6 @@
 import styles from "./style";
+import react from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom/dist";
 import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components";
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
