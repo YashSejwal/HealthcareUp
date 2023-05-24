@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CheckoutForm() {
+function PaymentGateway() {
     return (
 
         
@@ -86,4 +86,4 @@ function CheckoutForm() {
         </div>
     );
 }
-export default CheckoutForm;
+export default PaymentGateway;

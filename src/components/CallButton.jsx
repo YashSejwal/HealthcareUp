@@ -12,7 +12,7 @@ const CallButton = () => {
     <div className='wrapperButton' >
 
     <button className='callBtn'>
-      <a href="tel:+91 8700352079" className='sos'>SOS</a>
+      <a href="tel: 112" className='sos'>SOS</a>
     </button>
     </div>
   );

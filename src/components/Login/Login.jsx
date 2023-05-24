@@ -9,6 +9,7 @@ import CTA from "../CTA";
 import { Link,useNavigate } from "react-router-dom";
 import Appointment from '../Appointments/appointment';
 import patientimg from "../../assets/patient.png";
+import "./login.css"
 const Login = () => {
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
@@ -89,6 +90,7 @@ const Login = () => {
             <img src={patientimg} alt="Image of a person" style={{ float: "left" }} />
 
             <form
+              className="loginForm"
               onSubmit={handleSubmit}
               style={{
                 display: "flex",
@@ -104,8 +106,8 @@ const Login = () => {
               >
                 {errMsg}
               </p>
-              <h1>Sign In</h1>
-              <label htmlFor="username">Username:</label>
+              <h1 className="loginElement">Sign In</h1>
+              <label htmlFor="username" className="inputLabels">Username:</label>
               <input
                 type="text"
                 style={{ color: "black" }}
@@ -117,7 +119,7 @@ const Login = () => {
                 required
               />
 
-              <label htmlFor="password">Password:</label>
+              <label htmlFor="password" className="inputLabels">Password:</label>
               <input
                 type="password"
                 id="password"
@@ -126,7 +128,7 @@ const Login = () => {
                 required
                 style={{ color: "black" }}
               />
-              <label>Login For:</label>
+              <label className="inputLabels">Login For:</label>
               <div style={{ display: "flex", flexDirection: "row" }}>
                 <input
                   type="radio"
@@ -136,7 +138,7 @@ const Login = () => {
                   required
                 />
                 &nbsp;
-                <label htmlFor="type">Patient</label>&nbsp;&nbsp;&nbsp;
+                <label htmlFor="type" className="inputLabels">Patient</label>&nbsp;&nbsp;&nbsp;
                 <br></br>
                 <input
                   type="radio"
@@ -146,7 +148,7 @@ const Login = () => {
                   value={patient}
                 />
                 &nbsp;
-                <label htmlFor="doctor">Doctor</label>&nbsp;&nbsp;&nbsp;
+                <label htmlFor="doctor" className="inputLabels">Doctor</label>&nbsp;&nbsp;&nbsp;
                 <br />
                 <input
                   type="radio"
@@ -156,13 +158,13 @@ const Login = () => {
                   value={admin}
                 />
                 &nbsp;
-                <label htmlFor="admin">Admin</label>
+                <label htmlFor="admin" className="inputLabels">Admin</label>
               </div>
-              <button>Sign In</button>
+              <button ><a href=" http://localhost:3000">Sign In</a></button>
               <p>
                 Need an Account?
                 <br />
-                <span className="line">
+                <span className="lines">
                   {/*put router link here*/}
                   <a href="/register" style={{ marginLeft: "2rem" }}>
                     Sign Up

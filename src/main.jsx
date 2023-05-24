@@ -10,6 +10,7 @@ import AfterLogin from "./components/Login/AfterLogin";
 import {AuthProvider} from "./context/AuthProvider";
 import PatientAppointments from "./components/Appointments/PatientAppointments";
 import Loginpatient from "./components/Appointments/DoctorList";
+import PaymentGateway from "./components/PaymentGateway";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/patientAppointments" element={<PatientAppointments />} />
           <Route path="/getPatientProfile" element={<PatientAppointments />} />
           <Route path="/doctorlist" element={<Loginpatient />} />
+          <Route path="/payment" element={<PaymentGateway />} />
 
         </Routes>
       </BrowserRouter>

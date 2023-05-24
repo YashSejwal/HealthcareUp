@@ -10,7 +10,6 @@ import "./register.css";
 import Navbar from "../../components/Navbar";
 import styles from "../../style";
 import { Link } from "react-router-dom";
-import logins from "../../assets/logins.png";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -102,7 +101,7 @@ const Register = () => {
           <section>
             <h1 className="titleLogin">Success!</h1>
             <p>
-              <Link to ="/loginpatient">Sign In</Link>
+              <a href=" http://localhost:3000">Sign In</a>
             </p>
           </section>
         ) : (
