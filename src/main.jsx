@@ -22,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/afterlogin" element={<AfterLogin />} />
           <Route path="/patientAppointments" element={<PatientAppointments />} />
+          <Route path="/payment" element={<PaymentGateway/>}/>
           <Route path="/getPatientProfile" element={<PatientAppointments />} />
           <Route path="/doctorlist" element={<Loginpatient />} />
           <Route path="/payment" element={<PaymentGateway />} />
